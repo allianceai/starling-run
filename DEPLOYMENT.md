@@ -1,20 +1,39 @@
-# Starling Run — Deployment
+# Starling Run — Deployment Record
 
 ## Live URL
-<!-- FILL_URL_HERE — update after `vercel --prod` completes -->
 
-## Deploy Date
-2026-08-01
+**https://starling-run.vercel.app**
+
+(Game file direct URL: https://starling-run.vercel.app/starling-run.html)
 
 ## Platform
-Vercel (static, no build step)
 
-## Source
-https://github.com/allianceai/starling-run
+Vercel — Static Site (no build command, output directory: repo root)
 
-## Notes
-- Single self-contained HTML5 file (~674 lines) with procedural canvas drawing and Web Audio API
-- No CDN dependencies, no build process, no external assets required
-- All sprites drawn with canvas 2D API; all audio generated with Web Audio API
-- Deployed via `vercel --prod --yes --token "$VERCEL_TOKEN"`
-- Assets directory (assets/) also served statically for reference
+## Project
+
+- **Vercel Project:** cameron-hamiltons-projects/starling-run
+- **GitHub Repo:** https://github.com/allianceai/starling-run
+- **Inspector:** https://vercel.com/cameron-hamiltons-projects/starling-run
+
+## Deployments
+
+| Date | ID | URL | Status |
+|------|----|-----|--------|
+| 2026-08-01 | dpl_4HJR9XR5xXCCmwJY52s9uNpWATQb | https://starling-run.vercel.app | ✅ LIVE |
+
+## Verification
+
+- HTTP 200 confirmed on https://starling-run.vercel.app/ ✅
+- HTTP 200 confirmed on https://starling-run.vercel.app/starling-run.html ✅
+- Canvas element `<canvas id="c" width="480" height="480">` present ✅
+- 3 embedded base64 image data URIs present ✅
+- Audio engine (27 `audio` refs, `bgm` + `mute` toggle) embedded ✅
+- index.html redirect from root → starling-run.html ✅
+
+## How to Redeploy
+
+```bash
+cd /home/cameron/halie/projects/build-and-ship-starling-run-a-playable-browser-arcade-game-with-__project_goal_1785606762358
+vercel --prod --yes --token "$VERCEL_TOKEN"
+```
